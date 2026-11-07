@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahana | Personal Portfolio</title>
+
+    <style>
+        /* Basic page styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f7ff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation bar */
+        header {
+            background-color: #5b3cc4;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h2 {
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        /* Home section */
+        .home {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 60px 8%;
+            flex-wrap: wrap;
+        }
+
+        .home-text {
+            max-width: 550px;
+        }
+
+        .home-text h1 {
+            font-size: 45px;
+            color: #5b3cc4;
+            margin-bottom: 10px;
+        }
+
+        .home-text h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .home-text p {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        /* Profile image */
+        .profile-img {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            border: 7px solid #d8ccff;
+            object-fit: cover;
+            background-color: #e8e0ff;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: #5b3cc4;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #39218d;
+            transform: translateY(-3px);
+        }
+
+        /* Common section styling */
+        section {
+            padding: 65px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 32px;
+            color: #5b3cc4;
+            margin-bottom: 25px;
+        }
+
+        /* About section */
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        /* Education, skills and project cards */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            width: 280px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(91,60,196,0.2);
+        }
+
+        .card h3 {
+            color: #5b3cc4;
+            margin-bottom: 12px;
+        }
+
+        /* Skills */
+        .skill {
+            display: inline-block;
+            background-color: #e8e0ff;
+            color: #4b2eaa;
+            padding: 12px 22px;
+            margin: 8px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Contact section */
+        .contact p {
+            margin: 12px 0;
+            font-size: 17px;
+        }
+
+        .contact a {
+            color: #5b3cc4;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 8px;
+            padding: 10px 18px;
+            background-color: #5b3cc4;
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background-color: #39218d;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #5b3cc4;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        /* Mobile responsive design */
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 13px;
+            }
+
+            .home {
+                text-align: center;
+                flex-direction: column-reverse;
+                gap: 30px;
+            }
+
+            .home-text h1 {
+                font-size: 34px;
+            }
+
+            .profile-img {
+                width: 210px;
+                height: 210px;
+            }
+
+            section {
+                padding: 45px 5%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation menu -->
+    <header>
+        <h2>Sahana.</h2>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home section -->
+    <section class="home" id="home">
+
+        <div class="home-text">
+            <h3>Hello, I'm</h3>
+            <h1>Sahana</h1>
+            <h3>BCA Student</h3>
+
+            <p>
+                Welcome to my personal portfolio!
+                I am a passionate student interested in
+                technology, programming and learning new skills.
+            </p>
+
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+
+        <!-- Replace this image URL with your own photo -->
+        <img
+            src="https://placehold.co/300x300/d8ccff/5b3cc4?text=Your+Photo"
+            alt="Sahana Profile Photo"
+            class="profile-img"
+        >
+
+    </section>
+
+    <!-- About section -->
+    <section class="about" id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            Hi! I am Sahana, a BCA student from Tumkur.
+            I am interested in computer science and technology.
+            I enjoy learning programming languages and developing
+            my technical knowledge. My hobby is reading books,
+            which helps me learn new things and improve myself.
+        </p>
+
+    </section>
+
+    <!-- Education section -->
+    <section id="education">
+
+        <h2>My Education</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <h3>Degree</h3>
+                <p>Bachelor of Computer Applications (BCA)</p>
+                <p>Currently Studying</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Skills section -->
+    <section id="skills">
+
+        <h2>My Skills</h2>
+
+        <div>
+            <span class="skill">C</span>
+            <span class="skill">Python</span>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">Java</span>
+        </div>
+
+    </section>
+
+    <!-- Projects section -->
+    <section id="projects">
+
+        <h2>My Projects</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <h3>Personal Portfolio</h3>
+                <p>
+                    A personal website created using
+                    HTML and CSS to showcase my profile,
+                    education and skills.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Python Project</h3>
+                <p>
+                    A beginner-level Python project
+                    to practise programming and
+                    problem-solving skills.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact section -->
+    <section class="contact" id="contact">
+
+        <h2>Contact Me</h2>
+
+        <p>
+            <strong>Email:</strong>
+            <a href="mailto:yourmail@example.com">
+                Add Your Email
+            </a>
+        </p>
+
+        <p>
+            <strong>Phone:</strong>
+            <a href="tel:9535678200">9535678200</a>
+        </p>
+
+        <p><strong>Location:</strong> Tumkur</p>
+
+        <div class="social-links">
+
+            <a href="https://www.linkedin.com/" target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank">
+                Instagram
+            </a>
+
+            <a href="https://github.com/" target="_blank">
+                GitHub
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Sahana | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
